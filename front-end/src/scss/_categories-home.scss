@@ -1,0 +1,147 @@
+.categoriesHome__container {
+
+    margin: 4rem 0 6rem 0;
+
+    .categoriesHome__wrapper {
+
+        margin-bottom: 4rem;
+
+        .categories__header {
+
+            margin-bottom: 4rem;
+            background: linear-gradient(
+                $bg-seconary-ol, 
+                $bg-seconary-ol
+              ),
+              url('../images/category-header.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            padding: 4rem 2rem;
+            color: $cool-blue-gray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h1 {
+                font-size: calc(32px + 8 * ((100vw - 168px) / (468 - 168)));
+                margin-bottom: 0.65rem;
+                text-shadow: 2px 2px 4px #000;
+
+                span {
+                    color: $blue-lt;
+                }
+            }
+
+            p {
+                text-shadow: 2px 2px 4px #000;
+                max-width: 40rem;
+                text-align: center;
+                
+            }
+
+        }
+
+        .categoriesCard__container {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4rem;
+            max-width: 1400px;
+            margin: 0 auto;
+
+            .categoryCard {
+
+                width: 100%;
+                background-color: $bg-hero;
+                padding: 1rem 1rem 2rem 1rem;
+                border-radius: 0.25rem;
+                box-shadow: 1px 1px 5px $bg-seconary;
+
+                h2 {
+                    font-family: $primary-font-stack;
+                    text-transform: uppercase;
+                    color: $cool-blue-gray-variant;
+                    margin-bottom: 0.35rem;
+                }
+
+                .category__description {
+                    font-weight: 200;
+                    color: $cool-blue-gray;
+                    margin-bottom: 4rem;
+                    max-width: 48rem;
+                }
+
+                a {
+                    text-decoration: none;
+                    background: $pink-gradient;
+                    padding: 0.5rem 1rem;
+                    color: $blue-lt;
+                    text-shadow: 1px 1px 2px $bg-seconary;
+                    text-transform: uppercase;
+                    border-radius: 0.85rem;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        color: $color-primary;
+                        background: $pink-gradient-variant;
+                    }
+                    
+                }
+            }
+
+        }
+
+        // pagination
+
+        .pagination__container {
+
+            margin-top: 4rem;
+
+            .pagination__wrapper {
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .icons {
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                    margin-bottom: 1rem;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-bottom: 1rem;
+                        font-size: 1.6rem;
+                        color: $cool-blue-gray;
+                        text-decoration: none;
+                        padding: 0.85rem;
+                        border: 2px solid $blue-lt;
+                        border-radius: 4px;
+                        transition: all 0.3s ease-in-out;
+                        svg {
+                            padding: 0;
+                            margin: 0;
+                        }
+
+                        &:hover {
+                            background-color: $bg-seconary-ol;
+                        }
+                    }
+
+                    .disabled {
+                        opacity: 0.2;
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+    }
+}

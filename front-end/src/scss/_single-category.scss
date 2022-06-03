@@ -1,0 +1,115 @@
+.categorySingle__container {
+
+    margin-top: 4rem;
+
+    .categorySingle__wrapper {
+
+        .page__header {
+
+            position: relative;
+
+            .coverImage {
+                max-height: 20rem;
+            }
+
+            .header__content {
+                position: absolute;
+                top: 0;
+                height: 20rem;
+                width: 100%;
+                background-color: $bg-seconary-ol;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                color: $cool-blue-gray;
+
+                h1 {
+                    font-size: calc(32px + 8 * ((100vw - 168px) / (468 - 168)));
+                    text-shadow: 2px 2px 4px #000;
+                    margin-bottom: 0.35rem;
+                    color: $gold;
+                }
+
+                p {
+                    text-align: center;
+                    text-shadow: 2px 2px 4px #000;
+                    max-width: 40rem;
+                }
+            }
+        }
+
+        .categorySingle__subheading {
+            color: $cool-blue-gray;
+            margin: 4rem 0 6rem 0;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h2 {
+
+                font-size: calc(24px + 6 * ((100vw - 168px) / (468 - 168)));
+                margin-bottom: 0.35rem;
+
+                span {
+                    color: $pink;
+                }
+            }
+
+            p {
+                max-width: 40rem;
+            }
+        }
+
+        .categoryBlogs__container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+
+            .card__container {
+
+                padding: 1rem 1rem 1.35rem 1rem;
+                background-color: $bg-hero;
+                border-radius: 2rem;
+                box-shadow: 2px 2px 4px $blue-lt;
+
+                .feature__img {
+                    border-radius: 2rem;
+                    margin-bottom: 0.65rem;
+                }
+
+                .featureBlog__title {
+                    color: $cool-blue-gray;
+                    text-decoration: none;
+                }
+
+                .featured__date {
+                    margin-top: 0.35rem;
+                }
+
+                .featured__categories {
+
+                    margin-top: 1rem;
+                    color: $orange;
+    
+                    a {
+                        text-decoration: none;
+                        color: $cool-blue-gray;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in-out;
+    
+                        &:hover {
+                            color: $gold;
+                        }
+                    }
+                    
+                }
+            }
+        }
+
+    }
+}

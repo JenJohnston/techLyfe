@@ -1,0 +1,48 @@
+.hero__container {
+    background-color: $bg-hero;
+
+    .hero__wrapper {
+        display: flex;
+        flex-direction: column-reverse;
+       
+
+        .left {
+            margin-top: 2rem;
+            padding: 1rem;
+            
+
+            .hero__heading {
+
+                font-size: calc(32px + 8 * ((100vw - 168px) / (468 - 168)));
+                color: $cool-blue-gray;
+                margin-bottom: 0.35rem;
+
+                span {
+                    color: $gold;
+                }
+            }
+
+            h2 {
+                font-weight: 200;
+                color: $cool-blue-gray-variant;
+                margin-bottom: 1rem;
+            }
+
+            .hero__text {
+                font-weight: 200;
+                line-height: 1.25;
+                max-width: 30rem;
+                margin-bottom: 2rem;
+            }
+
+            .hero__btn {
+                @extend %btn !optional;
+                width: fit-content;
+
+                &:hover {
+                    color: $color-primary;
+                }
+            }
+        }
+    }
+}

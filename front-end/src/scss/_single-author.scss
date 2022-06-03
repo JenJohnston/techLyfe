@@ -1,0 +1,123 @@
+.authorSingle__container {
+
+    margin-top: 4rem;
+
+    .authorSingle__wrapper {
+        .author__header {
+
+            margin-bottom: 4rem;
+            background: linear-gradient(
+                $bg-primary-ol, 
+                $bg-primary-ol
+              ),
+              url('../images/author-header.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 2rem;
+            color: $cool-blue-gray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            .profileImage {
+                max-width: 12rem;
+                max-height: 12rem;
+                border-radius: 50%;
+                border: 4px solid $pink-lt;
+                object-fit: fill;
+    
+            }
+
+            .header__content {
+                margin-top: 1rem;
+                text-align: center;
+
+                h1 {
+                    font-size: calc(24px + 8 * ((100vw - 168px) / (468 - 168)));
+                    margin-bottom: 0.65rem;
+                    text-shadow: 2px 2px 4px #000;
+                }
+
+                p {
+                    text-shadow: 2px 2px 4px #000;
+                    max-width: 40rem;
+                    font-size: 1.25rem;
+                }
+            }
+        }
+
+        .author__subheading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: $cool-blue-gray-variant;
+            margin-bottom: 4rem;
+
+            h2 {
+                font-size: calc(20px + 6 * ((100vw - 168px) / (468 - 168)));
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px #000;
+
+                span {
+                    color: $pink-lt;
+                }
+            }
+
+            p {
+                max-width: 40rem;
+            }
+        }
+
+        .categoryBlogs__container {
+
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            align-items: center;
+
+            .card__container {
+
+                padding: 1rem 1rem 1.35rem 1rem;
+                background-color: $bg-hero;
+                border-radius: 2rem;
+                box-shadow: 2px 2px 4px $blue-lt;
+
+                .feature__img {
+                    border-radius: 2rem;
+                    margin-bottom: 0.65rem;
+                }
+
+                .featureBlog__title {
+                    color: $cool-blue-gray;
+                    text-decoration: none;
+                }
+
+                .featured__date {
+                    margin-top: 0.35rem;
+                }
+
+                .featured__categories {
+
+                    margin-top: 1rem;
+                    color: $orange;
+    
+                    a {
+                        text-decoration: none;
+                        color: $cool-blue-gray;
+                        text-transform: uppercase;
+                        cursor: pointer;
+                        transition: all 0.3s ease-in-out;
+    
+                        &:hover {
+                            color: $gold;
+                        }
+                    }
+                    
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,67 @@
+.footer__container {
+
+    background: hsl(0 0% 100%/ 0.1);
+    backdrop-filter: blur(10px);
+    max-height: fit-content;
+    text-align: center;
+    padding: 1.35rem;
+    width: 100%;
+    
+
+    // Logo Styling
+
+    .logo {
+
+        padding: 1.35rem;
+        margin-bottom: 0.65rem;
+        
+        .logo__link {
+            color: $color-primary;
+            text-decoration: none;
+            display: flex;
+            gap: 0.35rem;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.35rem;
+
+            svg {
+                color: $cool-blue-gray;
+            }
+
+            span {
+                color: $gold;
+            }
+        }
+    }
+
+    .media-links {
+
+        display: flex;
+        justify-content: center;
+        gap: 1.35rem;
+        margin-bottom: 2rem;
+
+        .menu-link {
+
+            a {
+                color: $cool-blue-gray;
+                transition: all 0.3 ease-in-out;
+                font-size: 1.2rem;
+                &:hover {
+                    color: $blue-lt;
+                }
+            }
+            
+        }
+    }
+
+    .footer-content {
+        color: $cool-blue-gray-variant;
+        font-size: 0.85rem;
+        
+        p {
+            margin-bottom: 0.65rem;
+        }
+    }
+
+}

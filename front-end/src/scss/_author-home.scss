@@ -1,0 +1,154 @@
+.authorHome__container {
+
+    margin-top: 4rem;
+
+    .authorHome__wrapper {
+
+        .section__header {
+
+            margin-bottom: 4rem;
+            background: linear-gradient(
+                $bg-primary-ol, 
+                $bg-primary-ol
+              ),
+              url('../images/author-home-header.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding: 4rem 2rem;
+            color: $cool-blue-gray;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+
+            h1 {
+                font-size: calc(32px + 8 * ((100vw - 168px) / (468 - 168)));
+                margin-bottom: 0.65rem;
+                text-shadow: 2px 2px 4px #000;
+
+                span {
+                    color: $gold;
+                }
+            }
+
+            p {
+                text-shadow: 2px 2px 4px #000;
+                max-width: 40rem;
+                
+            }
+
+        }
+
+        .author__subheading {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            margin-bottom: 4rem;
+            padding: 1rem;
+            color: $cool-blue-gray-variant;
+
+            h2 {
+                font-size: calc(20px + 6 * ((100vw - 168px) / (468 - 168)));
+                margin-bottom: 1rem;
+                text-shadow: 2px 2px 4px #000;
+
+                span {
+                    color: $orange;
+                }
+            }
+
+            p {
+                max-width: 60rem;
+            }
+            
+        }
+
+        .authorCard__container {
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 4rem;
+
+            .author__profile {
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 1rem;
+                padding: 2rem;
+                border-radius: 0.85rem;
+                text-decoration: none;
+                color: $cool-blue-gray;
+                background-color: $bg-seconary-ol;
+                box-shadow: 2px 2px 4px $blue-lt;
+                
+
+                .profileImage {
+                    width: 12rem;
+                    aspect-ratio: 1 / 1;
+                    border-radius: 50%;
+                    object-fit: contain;
+                    border: 4px solid $gold;
+                }
+            }
+        }
+
+         // pagination
+
+         .pagination__container {
+
+            margin-top: 4rem;
+
+            .pagination__wrapper {
+
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .icons {
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 1rem;
+                    margin-bottom: 1rem;
+
+                    a {
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        margin-bottom: 1rem;
+                        font-size: 1.6rem;
+                        color: $cool-blue-gray;
+                        text-decoration: none;
+                        padding: 0.85rem;
+                        border: 2px solid $blue-lt;
+                        border-radius: 4px;
+                        transition: all 0.3s ease-in-out;
+                        svg {
+                            padding: 0;
+                            margin: 0;
+                        }
+
+                        &:hover {
+                            background-color: $bg-seconary-ol;
+                        }
+                    }
+
+                    .disabled {
+                        opacity: 0.2;
+                        pointer-events: none;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+// Google Fonts
+
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&display=swap');
+
+$primary-font-stack: 'Noto Sans', sans-serif;
+$title-font-stack: 'Share Tech', sans-serif;
+
+
+/* Color Theme Swatches in RGBA */
+
+$bg-primary: rgba(11,11,39, 1);
+$bg-seconary: rgba(22,70,89, 1);
+$bg-hero: rgba(6,19,36, 1);
+$blue-lt: rgba(51,177,191, 1);
+$gold: rgba(216,163,4, 1);
+$orange: rgba(216,121,4, 1);
+$pink: rgba(216,60,146, 1);
+$pink-lt: rgba(242,106,206, 1);
+$cool-blue-gray: rgba(177,191,202, 1);
+$cool-blue-gray-variant: rgba(211,221,226, 1);
+$color-primary: rgba(246,255,249, 1);
+
+// overlays
+
+$bg-primary-ol: rgba(11,11,39, 0.75);
+$bg-seconary-ol: rgba(22,70,89, 0.4);
+
+// gradients
+
+$pink-gradient: linear-gradient(to bottom right, $bg-seconary, $pink);
+$pink-gradient-variant: linear-gradient(to bottom right, $pink, $bg-seconary);
+
+
+// global styling
+
+body {
+    font-family: $primary-font-stack;
+    background: $bg-primary;
+    color: $color-primary;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+// typography
+
+h1,
+h2,
+h3,
+h4 {
+    font-family: $title-font-stack;
+}
+
+// utils
+
+.sr-only {
+    display: none;
+}
+
+%btn {
+    background: transparent;
+    border-image-slice: 1;
+    color: $cool-blue-gray;
+    text-transform: uppercase;
+    padding: 1rem;
+    border-radius: 0.25rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &:focus {
+        outline: none;
+    }
+}
+
+.border-gradient-pink {
+    border-image-source: $pink-gradient;
+
+    &:hover {
+        border-image-source: $pink-gradient-variant;
+    }
+}

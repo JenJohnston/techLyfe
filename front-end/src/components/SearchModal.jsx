@@ -1,0 +1,136 @@
+import React, { useContext, useState, useEffect } from 'react'
+import { ModalSearchContext } from '../context/modalSearchContext'
+import axios from 'axios'
+import { CgClose } from 'react-icons/cg'
+import SearchField from './SearchField'
+import { graphql, useStaticQuery } from 'gatsby'
+import SearchResult from './SearchResult'
+
+const query = graphql`
+{
+    localSearchBlogs {
+        publicStoreURL
+        publicIndexURL
+    }
+    localSearchCategories {
+        publicStoreURL
+        publicIndexURL
+    }
+    localSearchAuthors {
+        publicStoreURL
+        publicIndexURL
+    }
+}
+`
+
+export default function SearchModal() {
+
+    const { isModalSearchOpen, closeModalSearch }  = useContext(ModalSearchContext)
+
+    const handleSearchModal = () => {
+        closeModalSearch()
+    }
+
+    const { isSearchModalOpen } = useContext(ModalSearchContext);
+    const [ searchQuery, setSearchQuery ] = useState('')
+    const [blogsIndexStore, setBlogsIndexStore] = useState(null);
+    const [categoriesIndexStore, setCategoriesIndexStore] = useState(null);
+    const [authorsIndexStore, setAuthorsIndexStore] = useState(null);
+    const data = useStaticQuery(query)
+
+    useEffect(() => {
+        if (isSearchModalOpen) {
+          document.body.style.overflow = 'hidden';
+          setSearchQuery('');
+        } else {
+          document.body.style.overflow = 'initial';
+        }
+    }, [isSearchModalOpen]);
+
+    const {
+        publicStoreURL: blogsPublicStoreURL,
+        publicIndexURL: blogsPublicIndexURL,
+    } = data.localSearchBlogs;
+    const {
+        publicStoreURL: categoriesPublicStoreURL,
+        publicIndexURL: categoriesPublicIndexURL,
+    } = data.localSearchCategories;
+    const {
+        publicStoreURL: authorsPublicStoreURL,
+        publicIndexURL: authorsPublicIndexURL,
+    } = data.localSearchAuthors;
+
+    const handleOnFocus = async () => {
+        if(blogsIndexStore && categoriesIndexStore && authorsIndexStore) return
+
+        const [
+            {data: blogsIndex},
+            {data: blogsStore},
+            {data: categoriesIndex},
+            {data: categoriesStore},
+            {data: authorsIndex},
+            {data: authorsStore},
+        ] = await Promise.all([
+            axios.get(blogsPublicIndexURL),
+            axios.get(blogsPublicStoreURL),
+            axios.get(categoriesPublicIndexURL),
+            axios.get(categoriesPublicStoreURL),
+            axios.get(authorsPublicIndexURL),
+            axios.get(authorsPublicStoreURL),
+        ])
+        setBlogsIndexStore({
+            index: blogsIndex,
+            store: blogsStore,
+        })
+        setCategoriesIndexStore({
+            index: categoriesIndex,
+            store: categoriesStore,
+        })
+        setAuthorsIndexStore({
+            index: authorsIndex,
+            store: authorsStore,
+        })
+        
+    }
+
+    if(!isModalSearchOpen) return null
+    return (
+        <div className='modalSearch__Container'>
+            <button 
+                className='mobileNav__toggle'
+                onClick={handleSearchModal} 
+                onKeyDown={handleSearchModal}
+                tabIndex={0}
+            >
+                <CgClose/>
+            </button>
+            <div className="modal__content">
+                <div>
+                    <h2>Please Enter Your Query</h2>
+                    <p>...our bots are hard at work looking for your content</p>
+                </div>
+                <SearchField
+                    value={searchQuery}
+                    setValue={setSearchQuery}
+                    onFocus={handleOnFocus}
+                />
+                {
+                    searchQuery 
+                    && blogsIndexStore
+                    && categoriesIndexStore
+                    && authorsIndexStore
+                    && (
+                       <div className='search__result'>
+                           <SearchResult
+                                searchQuery={searchQuery}
+                                blogsIndexStore={blogsIndexStore}
+                                categoriesIndexStore={categoriesIndexStore}
+                                authorsIndexStore={authorsIndexStore}
+                           />
+                       </div> 
+                    )
+                }
+            </div>
+        </div>
+    )
+}

@@ -1,0 +1,193 @@
+.header__container {
+
+   
+    // Logo Styling
+
+    .logo {
+
+        padding: 1.35rem;
+
+        .logo__link {
+            color: $color-primary;
+            text-decoration: none;
+            display: flex;
+            gap: 0.35rem;
+            align-items: center;
+            font-size: 1.35rem;
+
+            svg {
+                color: $cool-blue-gray;
+            }
+
+            span {
+                color: $gold;
+            }
+        }
+    }
+
+    // Nav Toggle
+
+    .mobileNav__toggle {
+        position: absolute;
+        background: transparent;
+        color: $pink;
+        z-index: 120;
+        font-size: 2rem;
+        aspect-ratio: 1;
+        top: 1rem;
+        right: 1rem;
+        border: none;
+    }
+
+    // Nav Styling
+
+    .navbar {
+
+        background: hsl(0 0% 100%/ 0.1);
+        backdrop-filter: blur(5px);
+        padding: min(20vh, 10rem) 1.35rem;
+        position: fixed;
+        inset: 0 0 4rem 10rem;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in-out;
+        z-index: 100;
+
+        .navmenu {
+            z-index: 110;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            
+
+            .nav__item {
+
+                padding: 0.35rem 0;
+
+                .menu__link {
+
+                    font-size: 1rem;
+                    color: $cool-blue-gray;
+                    text-decoration: none;
+                    font-weight: 300;
+                    padding: 0.35rem 0;
+                    transition: all 0.3s ease-in-out;
+
+                    span {
+                        font-weight: 600;
+                        color: $blue-lt;
+                    }
+
+                    &:hover {
+
+                        color: $color-primary;
+                        text-shadow:4px 4px 18px $color-primary;
+                    }
+                }
+                
+            }
+            
+        }
+
+    }
+
+    .show-nav {
+        transform: translateX(0%);
+    }
+
+    
+    // Search Icon
+
+    .searchIcon {
+        font-size: 1.85rem;
+        color: $gold;
+    }
+
+}
+
+ // Modal Search Styling
+
+ .modalSearch__Container {
+
+    width: 100vw;
+    height: 1000px;
+    background-color: $bg-primary-ol;
+    backdrop-filter: blur(2px);
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 120;
+
+
+    .mobileNav__toggle {
+        position: absolute;
+        background: transparent;
+        color: $pink;
+        z-index: 120;
+        font-size: 2rem;
+        aspect-ratio: 1;
+        top: 1.35rem;
+        right: 2rem;
+        border: none;
+    }
+
+    .modal__content {
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: fixed;
+        gap: 2rem;
+        top: 15%;
+
+        div {
+            text-align: center;
+
+            h2 {
+                margin-bottom: 0.65rem;
+            }
+
+            p {
+                color: $cool-blue-gray;
+            }
+
+        }
+
+        .search__container {
+
+            width: 100vw;
+            height: auto;
+            display: flex;
+            justify-content: center;
+            
+           .form-input {
+               border-radius: 0 2rem 2rem 0;
+           }
+    
+           .search-btn {
+               
+               background-color: $bg-seconary;
+               border: none;
+               border-radius: 2rem 0 0 2rem;
+               color: $orange;
+               font-size: 1.45rem;
+               display: flex;
+               align-items: center;
+               justify-content: center;
+               
+           }
+         }
+
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+

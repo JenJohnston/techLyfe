@@ -1,0 +1,10 @@
+.form-input {
+    background-color: transparent;
+    padding: 0.5rem;
+    border: 2px solid $bg-seconary;
+    color: $color-primary;
+}
+
+.form-input:focus {
+    outline: none;
+}
